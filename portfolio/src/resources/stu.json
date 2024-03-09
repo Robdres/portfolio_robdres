@@ -1,0 +1,22 @@
+{
+  "experiences": [
+    {
+      "name": "Mathematician",
+      "place": "Universidad San Francisco de Quito",
+      "location": "Quito, Ecuador",
+      "gpa": "3.83",
+      "date_end": "2023-03-15",
+      "skills": ["Statistics", "Neural networks","Stochastic Processes","Machine Learning"],
+      "topics": ["Testors","Computer Vision"]
+    },
+    {
+      "name": "Computer Science Engineer",
+      "place": "Universidad San Francisco de Quito",
+      "location": "Quito, Ecuador",
+      "gpa": "3.83 (In progress)",
+      "date_end": "2023-03-15",
+      "skills": ["Statistics", "Neural networks","Stochastic Processes","Machine Learning"],
+      "topics": ["Testors","Computer Vision"]
+    }
+  ]
+}

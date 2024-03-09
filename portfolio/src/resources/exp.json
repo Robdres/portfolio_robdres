@@ -1,0 +1,45 @@
+{
+  "experiences": [
+    {
+      "name": "Engineer", "place": "Synopsys",
+      "location": "Santiago, Chile",
+      "description": "Worked inside formality team, in charge of creating and sustaining algorithms for formal verification on chip design",
+      "achievements": [
+        "As a junior I learned quickly enough to become in charge of a whole verification tool"
+      ],
+      "date_ini": "2023-06-15",
+      "date_end": "P",
+      "skills": ["c++", "python"],
+      "s-skills": ["jira", "gdb"],
+      "soft_skills": ["Teamwork", "Collaboration"]
+    },
+    {
+      "name": "Jr Fullstack Developer",
+      "place": "Tecsicom",
+      "location": "Loja, Ecuador",
+      "description": "I worked with a group of developers to create the internal system of one of Ecuador's biggest advertising company, setting up internal databases and setting up a complete web server for their internal management",
+      "achievements": [
+        "As a junior I learned quickly enough to become in charge of a whole verification tool"
+      ],
+      "date_ini": "2022-05-15",
+      "date_end": "2023-02-15",
+      "skills": ["js", "angular"],
+      "s-skills": ["slack", "postman","sql"],
+      "soft_skills": ["Teamwork", "Collaboration"]
+    },
+    {
+      "name": "Quant Intern",
+      "place": "Ney Torres",
+      "location": "Quito, Ecuador",
+      "description": "Under the guidance of Ney Torres I was able to work and learn about the finance world, being able to in a little time setup tools and internal libraries for the analysis and study of financial metrics for trading",
+      "achievements": [
+        "As a junior I learned quickly enough to become in charge of a whole verification tool"
+      ],
+      "date_ini": "2023-02-15",
+      "date_end": "2023-06-15",
+      "skills": ["python"],
+      "s-skills": ["trello", "sql","gurufocus API"],
+      "soft_skills": ["Teamwork", "Collaboration"]
+    }
+  ]
+}
