@@ -1,39 +1,51 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
-export  default defineComponent({
-  name: "AcademicTag",
-  props: {
-    exp:{
-      type: Object,
+  import { ref,defineComponent } from 'vue';
+  export  default defineComponent({
+    name: "AcademicTag",
+    props: {
+      exp:{
+        type: Object,
+      }
+    },
+    methods:{
+      get_months,
+    },
+    data(){
+      return events;
     }
-  },
-  methods:{
-    get_months,
+
+  });
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function get_months(month:Number|undefined) {
+    return months[Number(month)];
   }
 
-});
-
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-function get_months(month:Number|undefined) {
-  return months[Number(month)]
-}
+  const events = ref([
+      { status: 'Ordered', date: '15/10/2020 10:30', icon: 'pi pi-shopping-cart', color: '#9C27B0', image: 'game-controller.jpg' },
+      { status: 'Processing', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: '#673AB7' },
+      { status: 'Shipped', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: '#FF9800' },
+      { status: 'Delivered', date: '16/10/2020 10:00', icon: 'pi pi-check', color: '#607D8B' }
+  ]);
 </script>
 
 <template>
-  <div class="about">
-    <div class="title">
+  <section class="about">
+    <header class="title">
       <h1>{{exp?.name}}</h1>
       <div>
-      <h2 id="place">
-        <p id="business"> GPA: {{exp?.gpa}}</p>
-      </h2>
-
+        <h2 id="place">
+          <p id="business"> GPA: {{exp?.gpa}}</p>
+        </h2>
       </div>
-    </div>
-    <p>{{exp?.place}}</p>
-    <p>{{exp?.location}}</p>
-    <p>{{exp?.skills}}</p>
-  </div> </template> <style lang="less">
+    </header>
+    <footer>
+      <p><strong>Where?: </strong> {{exp?.place}}</p>
+      <p> {{exp?.skills.join(", ")}}</p>
+    </footer>
+  </section>
+</template> 
+
+<style lang="less">
 h2{
   font-weight: 500;
 };
@@ -48,7 +60,6 @@ h2{
   background-color: var(--primary-sc);
   width:100%;
 };
-
 .title{
   position: relative;
   display: flex;
@@ -66,6 +77,7 @@ h2{
     width: 90%; /* Change width for cellphones */
   };
 };
+
 #location{
   opacity: 0%;
   font-size: 0.8em;
@@ -77,7 +89,6 @@ h2{
   color: var(--primary-sc);
   transform: translateX(8em);
 };
-
 #business{
   grid-row: 1;
   grid-column: 1;
@@ -98,8 +109,23 @@ h2{
   #date{
     display: none
   }
-  * {
-    font-size: 1em;
-  }
+  p{
+    font-size: 12px;
+  };
 };
+@media screen and (max-width: 960px) {
+    ::v-deep(.customized-timeline) {
+        .p-timeline-event:nth-child(even) {
+            flex-direction: row;
+
+            .p-timeline-event-content {
+                text-align: left;
+            }
+        }
+
+        .p-timeline-event-opposite {
+            flex: 0;
+        }
+    }
+}
 </style>

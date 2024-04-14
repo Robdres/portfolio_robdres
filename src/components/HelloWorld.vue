@@ -1,10 +1,10 @@
 <template>
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <div class="main">
-    <span>Roberto Alvarado </span>
     <div :class="{header:true}">
       <div class="text not_clicked">
-        <p>I'm a math major turned programmer with a focus on machine learning,
+        <p>
+        I'm a math major turned programmer with a focus on machine learning,
           C++, and data science. In my free time I like to learn about videogame
           development
         </p>
@@ -18,15 +18,11 @@
           projects in the realm of machine learning and beyond.</p>
       </div>
     <img src="../../public/profile.png" alt="gekki">
-
     </div>
     <span>What I Know?</span>
     <Icons/>
-
     <span>Job Experiences</span>
-    <div v-for="(experience, index) in json" :key="index" class="experience">
-      <ExperinceTag :exp="experience"/>
-    </div>
+      <ExperinceTag/>
     <span>Education</span>
     <div v-for="(experience, index) in json_stu" :key="index" class="experience">
       <AcademicTag :exp="experience"/>
@@ -35,24 +31,45 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent,ref } from 'vue';
 import ExperinceTag from '@/components/ExperinceTag.vue';
 import AcademicTag from '@/components/AcademicTag.vue';
 import Icons from '@/components/Icons.vue'
-import json from '@/resources/exp.json'
 import json_stu from '@/resources/stu.json'
- 
+import Menu from 'primevue/menu'
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const items = ref([
+    {
+        label: 'Projects',
+        icon: 'pi pi-palette',
+        route: '/books'
+    },
+    {
+        label: 'Books',
+        icon: 'pi pi-palette',
+        route: '/profile'
+    },
+    {
+        label: 'Blog',
+        icon: 'pi pi-palette',
+        route: '/blog'
+    },
+]);
 export default defineComponent({
   name: 'HelloWorld',
   components:{
     ExperinceTag,
     AcademicTag,
-    Icons
-},
+    Icons,
+    Menu
+  },
   data(){
     return {
-      json : json.experiences,
-      json_stu:json_stu.experiences
+      json_stu : json_stu.experiences,
+      items:items
     };
   }
 });
@@ -70,7 +87,8 @@ span{
 };
 
 p{
-  font-size: 2em;
+  font-size: 1.8em;
+  text-align: left;
 };
 
 .main{
@@ -92,7 +110,6 @@ p{
   .clicked{
     display:none;
   }
-
 };
 
 @media only screen and (max-width: 600px) {

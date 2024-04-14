@@ -19,9 +19,10 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent,ref} from 'vue';
 import SingleArticle from '@/components/SingleArticle.vue'
 import articles_json from '@/resources/blog.json'
+
 
 export default defineComponent({
   name: 'AboutView',
@@ -33,6 +34,7 @@ export default defineComponent({
       json: articles_json.articles
     }
   },
+
 });
 
 </script>
