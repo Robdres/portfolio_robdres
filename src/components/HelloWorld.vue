@@ -1,45 +1,40 @@
 <template>
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <div class="main">
-    <div :class="{header:true}">
-      <div class="text not_clicked">
-        <p>
-        I'm a math major turned programmer with a focus on machine learning,
-          C++, and data science. In my free time I like to learn about videogame
-          development
-        </p>
-        <p class="clicked">
-          I'm a math major turned programmer with a focus on machine learning,
-          C++, and data science. I enjoy unraveling complex problems, leveraging
-          my mathematical background to develop practical solutions.
-          Proficient in algorithm development and data analysis, I thrive in collaborative
-          environments where I can apply my skills to drive innovation. With a
-          passion for continuous learning, I'm eager to contribute to impactful
-          projects in the realm of machine learning and beyond.</p>
+  <main class="w-1/2  flex-col self-center">
+    <div class="">
+      <div class="flex justify-center content-center flex-row p-10">
+        <div class="">
+          <p>
+            I'm a math major turned programmer with a focus on machine learning,
+            C++, and data science. In my free, time I like to learn about videogame
+            development
+          </p>
+        </div>
+        <img src="../../public/profile.png" alt="gekki">
       </div>
-    <img src="../../public/profile.png" alt="gekki">
     </div>
-    <span>What I Know?</span>
-    <Icons/>
-    <span>Job Experiences</span>
+    <span class="p-10">Job Experiences</span>
+      <br/>
+      <em class="p-10">Currently I am not searching for a job, but I am always open to participate in projects on which I could be helpful</em>
       <ExperinceTag/>
-    <span>Education</span>
-    <div v-for="(experience, index) in json_stu" :key="index" class="experience">
-      <AcademicTag :exp="experience"/>
-    </div>
-  </div>
+    <span class="p-10">What I Know?</span>
+      <Icons class="w-full p-10"/>
+    <span class="p-10">Projects</span>
+      <br/>
+      <em class="p-10"> You can click on each one and see more information</em>
+      <Projects/>
+    <span class="p-10">Education</span>
+      <AcademicTag/>
+  </main>
 </template>
 
 <script lang="ts">
 import { defineComponent,ref } from 'vue';
 import ExperinceTag from '@/components/ExperinceTag.vue';
 import AcademicTag from '@/components/AcademicTag.vue';
+import Projects from '@/components/ProjectsSection.vue';
 import Icons from '@/components/Icons.vue'
-import json_stu from '@/resources/stu.json'
 import Menu from 'primevue/menu'
-import { useRouter } from 'vue-router';
-
-const router = useRouter();
 
 const items = ref([
     {
@@ -63,12 +58,12 @@ export default defineComponent({
   components:{
     ExperinceTag,
     AcademicTag,
+    Projects,
     Icons,
     Menu
   },
   data(){
     return {
-      json_stu : json_stu.experiences,
       items:items
     };
   }
@@ -82,8 +77,6 @@ span{
   font-size: 2em;
   align-self: center;
   text-align: left;
-  padding: 30px;
-  width: 50%;
 };
 
 p{
@@ -100,17 +93,6 @@ p{
   overflow: hidden;
 };
 
-.header{
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  max-width: 80%;
-  width: 50%;
-  .clicked{
-    display:none;
-  }
-};
 
 @media only screen and (max-width: 600px) {
   .header{
@@ -120,9 +102,6 @@ p{
     align-items: center;
     width: 85%; /* Change width for cellphones */
   }
-  img{
-    padding-bottom: 10px;
-  };
 };
 
 .experience{
@@ -133,6 +112,7 @@ p{
   align-items: center;
   width: 50%;
 }
+
 @media only screen and (max-width: 600px) {
   .my-header ,.experience{
     width: 85%; /* Change width for cellphones */

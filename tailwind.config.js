@@ -9,11 +9,18 @@ module.exports = {
       "gray": "#4367bf",
       "blue": "#1c5775",
       "gold": "#282828",
+    },
+    extend: {
+      animation: {
+        'spin-slow': 'transform 3s linear',
+      }
     }
+
   },
   variants: {
     extend: {},
   },
   plugins: [],
 }
+
 

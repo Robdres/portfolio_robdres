@@ -1,27 +1,27 @@
 <template >
   <header>
-    <div class="top_bar">
-    <span>Roberto Alvarado </span>
-    <div class="card flex justify-content-center">
-        <Button type="button" icon="pi pi-ellipsis-v" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
-        <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
-        <template #item="{ item, props }">
-        <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-            <a v-ripple :href="href" v-bind="props.action" @click="navigate">
-                <span :class="item.icon" />
-                <span class="ml-2">{{ item.label }}</span>
-            </a>
-        </router-link>
-        <a v-else v-ripple :href="item.url" :target="item.target" v-bind="props.action">
-            <span :class="item.icon" />
-            <span class="ml-2">{{ item.label }}</span>
-        </a>
-        </template>
-        </Menu>
-    </div>
+    <div class="top_bar w-1/2 m-0 pb-0">
+      <div class="p-10 flex m-0">
+          <Button type="button" class="p-0 bg-white" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
+          <Menu  ref="menu" id="overlay_menu" class="absolute text-xl" :model="items" :popup="true">
+          <template #start class="top-2">
+          </template>
+          <template class="top-2" #item="{ item, props }">
+          <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
+              <a v-ripple :href="href" v-bind="props.action" @click="navigate">
+                  <span class="text-xl" :class="item.icon" />
+                  <span class="ml-2 text-xl">{{ item.label }}</span>
+              </a>
+          </router-link>
+          </template>
+          </Menu>
+      </div>
+      <a href="/">
+        <span @click="navigate" class="text-right text-4xl">Roberto Alvarado</span>
+      </a>
     </div>
   </header>
-  <router-view/>
+  <router-view class="flex justify-center p-0"/>
 
 </template>
 
@@ -47,7 +47,6 @@ span{
   text-align: left;
   font-weight: 500;
   font-weight: bold;
-  font-size: 2em;
   align-self: center;
   text-align: left;
 };
@@ -55,9 +54,6 @@ span{
 .top_bar{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px;
-  width: 50%;
 };
 
 .p-menu{
@@ -67,10 +63,6 @@ span{
 .p-button{
   padding: 5px;
 };
-.card {
-    background: var(--surface-card);
-    padding: 2rem;
-}
 nav {
   position: relative;
   padding-top: 3em;
@@ -142,20 +134,20 @@ const menu = ref();
 
 const items = ref([
     {
-        label: 'Options',
+        label: 'What do you want to see?',
         items: [ {
             label: 'Projects',
-            icon: 'pi pi-palette',
+            icon: 'pi pi-sitemap',
             route: '/books'
         },
         {
             label: 'Books',
-            icon: 'pi pi-palette',
+            icon: 'pi pi-book',
             route: '/'
         },
         {
             label: 'Blog',
-            icon: 'pi pi-palette',
+            icon: 'pi pi-pencil',
             route: '/blog'
     },
         ]

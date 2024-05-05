@@ -3,13 +3,13 @@
     {
       "name": "Engineer", "place": "Synopsys",
       "location": "Santiago, Chile",
-      "description": "Worked inside formality team, in charge of creating and sustaining algorithms for formal verification on chip design",
+      "description": "I am currently working inside formality team, in charge of creating and sustaining algorithms for formal verification on chip design",
       "achievements": [
         "As a junior I learned quickly enough to become in charge of a whole verification tool"
       ],
       "date_ini": "2023-06-15",
       "date_end": "P",
-      "skills": ["c++", "python"],
+      "skills": ["cplusplus", "python"],
       "s-skills": ["jira", "gdb"],
       "soft_skills": ["Teamwork", "Collaboration"]
     },
@@ -23,7 +23,7 @@
       ],
       "date_ini": "2022-05-15",
       "date_end": "2023-02-15",
-      "skills": ["js", "angular"],
+      "skills": ["javascript", "angular"],
       "s-skills": ["slack", "postman","sql"],
       "soft_skills": ["Teamwork", "Collaboration"]
     },
