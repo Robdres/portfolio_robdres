@@ -22,18 +22,19 @@
           </div>
         </header>
         <div class="p-5 text-2xl">
-        {{exp?.gpa}}
+        GPA: {{exp?.gpa}}
         </div>
         <div class="flex flex-row pl-5  gap-5">
+            <p class="font-bold">Topics</p>
           <div  v-for="(ski,index) in exp.skills" :key="index">
-            <p>{{ski}}</p>
+            <p class="">{{ski}}</p>
           </div>
         </div>
       </section>
     </div>
   </div>
 
-</template> 
+</template>
 
 <style lang="less">
 h2{
@@ -81,12 +82,12 @@ h2{
   grid-row: 1;
   grid-column: 1;
   padding: 3px;
-  
+
 };
 .about:hover #location{
   opacity: 100%;
   transition: 1s opacity;
-  
+
 };
 #place{
   display: grid;

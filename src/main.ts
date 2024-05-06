@@ -8,3 +8,4 @@ import "primeicons/primeicons.css"; //icons
 import '@/assets/css/tailwind.css';
 
 createApp(App).use(router).use(PrimeVue).mount('#app')
+

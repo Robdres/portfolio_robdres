@@ -1,7 +1,7 @@
 <template >
   <header>
     <div class="top_bar w-1/2 m-0 pb-0">
-      <div class="p-10 flex m-0">
+      <div class="p-10 hidden m-0 "  >
           <Button type="button" class="p-0 bg-white" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
           <Menu  ref="menu" id="overlay_menu" class="absolute text-xl" :model="items" :popup="true">
           <template #start class="top-2">
@@ -16,8 +16,8 @@
           </template>
           </Menu>
       </div>
-      <a href="/">
-        <span @click="navigate" class="text-right text-4xl">Roberto Alvarado</span>
+      <a class="p-8" :href="health_check_url()">
+        <span @click="navigate" class="text-4xl">Roberto Alvarado</span>
       </a>
     </div>
   </header>
@@ -120,7 +120,7 @@ nav {
     width: 85%;
   };
 };
-  
+
 </style>
 <script setup lang="ts">
 import {defineComponent,ref} from 'vue';
@@ -138,12 +138,12 @@ const items = ref([
         items: [ {
             label: 'Projects',
             icon: 'pi pi-sitemap',
-            route: '/books'
+            route: '/projects'
         },
         {
             label: 'Books',
             icon: 'pi pi-book',
-            route: '/'
+            route: '/books'
         },
         {
             label: 'Blog',
@@ -157,6 +157,12 @@ const items = ref([
 const toggle = (event:any) => {
     menu.value.toggle(event);
 };
-
+const health_check_url = (data:string) =>{
+    var url:string = window.location.href
+    if(!url.includes("github")){
+        return "/";
+    }
+    return "/portfolio_robdres";
+}
 </script>
 

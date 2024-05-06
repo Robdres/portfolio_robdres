@@ -1,13 +1,12 @@
 <template>
-  <div class=" flex flex-row  items-center justify-center gap-10 ">
-    <i class="text-5xl text-blue devicon-cplusplus-plain"></i>
-    <i class="text-5xl text-blue devicon-python-plain"></i>
-    <i class="text-5xl text-blue devicon-javascript-plain"></i>
-    <i class="text-5xl text-blue devicon-vim-plain"></i>
-    <i class="text-5xl text-blue devicon-archlinux-plain"></i>
-    <i class="text-5xl text-blue devicon-rust-plain"></i>
-  </div>
-
+    <div class="flex flex-row items-center justify-center gap-10 ">
+        <i class="text-5xl text-blue devicon-cplusplus-plain"></i>
+        <i class="text-5xl text-blue devicon-python-plain"></i>
+        <i class="text-5xl text-blue devicon-vim-plain"></i>
+        <i class="text-5xl text-blue devicon-rust-plain"></i>
+        <i class="text-5xl text-blue devicon-javascript-plain"></i>
+        <i class="text-5xl text-blue devicon-archlinux-plain"></i>
+    </div>
 </template>
 
 <script lang="ts">

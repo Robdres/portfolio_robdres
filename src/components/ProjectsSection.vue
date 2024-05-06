@@ -10,13 +10,14 @@
   function openTab(link) {
     window.open(link, "_blank");
   }
+
 </script>
 
 <template>
   <div class="flex flex-col gap-2 pt-10 pb-10" >
-    <div v-for="(exp, index) in json.experiences" :key="index" class="flex flex-row" @click="openTab(exp.github)">
+    <div v-for="(exp, index) in json.experiences.slice(0,3)" :key="index" class="flex flex-row" @click="openTab(exp.github)">
       <main class="flex-row flex group">
-      <section class="about z-10 h-80 flex flex-col items-center group-hover:-translate-x-36  duration-1000">
+      <section class="about z-10 h-80 flex flex-col justify-between items-center group-hover:-translate-x-36  duration-1000">
         <header class="title">
           <h1 class="text-2xl font-bold">{{exp?.name}}</h1>
           <div>
@@ -75,7 +76,7 @@
 .about:hover #location{
   opacity: 100%;
   transition: 1s opacity;
-  
+
 };
 
 h2{
@@ -100,7 +101,7 @@ h2{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  
+
 };
 .content{
   display: flex;
@@ -109,7 +110,7 @@ h2{
   padding-left: 20px;
   justify-content: space-between;
   align-items: center;
-  
+
 };
 
 @media only screen and (max-width: 600px) {
@@ -136,12 +137,12 @@ h2{
   grid-row: 1;
   grid-column: 1;
   padding: 3px;
-  
+
 };
 .about:hover #location{
   opacity: 100%;
   transition: 1s opacity;
-  
+
 };
 
 @media only screen and (max-width: 600px) {

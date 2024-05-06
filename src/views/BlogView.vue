@@ -1,10 +1,10 @@
-<template> 
+<template>
 <div class="main">
   <div class="header">
     <h1>Blog</h1>
-    <p>This blog is just a recollection of ideas that I think about, 
-      it shows my personal views and nothing else. If you feel offended I love to 
-      talk with everyone and understand their view, my email is at the end so feel 
+    <p>This blog is just a recollection of ideas that I think about,
+      it shows my personal views and nothing else. If you feel offended I love to
+      talk with everyone and understand their view, my email is at the end so feel
       free to contact me. This blog is to keep what I learned
     </p>
     <p style="font-size: small;">
