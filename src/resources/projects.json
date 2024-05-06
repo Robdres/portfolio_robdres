@@ -10,9 +10,9 @@
       "img":"deep_learning.png"
     },
     {
-      "name": "Book repository (Currently implementing this project to this webpage)",
+      "name": "Book repository",
       "time": "2023 - Project",
-      "description": "I love reading so this project is complementary to this webpage, it's a way to talk about the books that I read and what I think of them. In the future I want to create some sort of discussion place. Also you can recommend me a book :D",
+      "description": "(Currently implementing this project in this webpage so project is down) I love reading so this project is complementary to this webpage, it's a way to talk about the books that I read and what I think of them. In the future I want to create some sort of discussion place. Also you can recommend me a book :D",
       "skills": ["javascript","firebase"],
       "github": "/",
       "topics": ["Testors","Computer Vision"],
