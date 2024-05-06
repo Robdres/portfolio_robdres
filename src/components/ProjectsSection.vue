@@ -17,7 +17,7 @@
   <div class="flex flex-col gap-2 pt-10 pb-10" >
     <div v-for="(exp, index) in json.experiences.slice(0,3)" :key="index" class="flex flex-row" @click="openTab(exp.github)">
       <main class="flex-row flex group">
-      <section class="about z-10 h-80 flex flex-col justify-between items-center group-hover:-translate-x-36  duration-1000">
+        <section class="about z-10 h-80 flex flex-col justify-between items-center " :class="{'group-hover:-translate-x-36  duration-1000':`${exp.img}`!='none'}">
         <header class="title">
           <h1 class="text-2xl font-bold">{{exp?.name}}</h1>
           <div>
@@ -36,7 +36,7 @@
         </div>
       </section>
       <section class="text-3xl text-blue text-right z-0 items-center ">
-        <div>
+        <div v-if="`${exp.img}`!='none'">
           <img :src="require(`../resources/${exp.img}`)" class="absolute h-56 object-cover translate-y-12 -translate-x-full group-hover:-translate-x-36 duration-1000" >
         </div>
       </section>
